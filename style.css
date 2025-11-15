@@ -14,9 +14,9 @@ header {
     padding: 20px 0;
     text-align: center;
 }
-
 header h1 {
-    margin: 0;
+    margin-top: 0; /* h1の上マージンを0にして、上に詰める */
+    margin-bottom: 15px; /* h1とnavの間隔を15pxに設定 */
 }
 
 /* メインコンテンツ部分 */
@@ -68,4 +68,40 @@ footer {
     text-align: center;
     margin-top: 30px;
     color: #777;
+}
+/* ナビゲーションメニュー全体 */
+nav {
+    background-color: #444; /* ヘッダーより少し明るい色 */
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block; /* リスト項目を横並びにする */
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+/* マウスを乗せた時のスタイル */
+nav a:hover {
+    color: #ddd;
+}
+
+/* 現在表示中のページを示すスタイル */
+nav a.active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
 }
