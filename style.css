@@ -1,227 +1,335 @@
-/* ページ全体の基本的な設定 */
-body {
-    /* 近代的で読みやすいフォントを優先順に指定 */
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f8ff; /* 背景色をごく薄い爽やかな水色に */
-    color: #333; /* 文字色は真っ黒ではなく濃いグレーで目に優しく */
-    margin: 0;
-    padding: 0;
+* {
+    box-sizing: border-box;
 }
 
-/* ヘッダー（ページ上部のタイトル部分） */
+:root {
+    --navy-950: #07111f;
+    --navy-900: #0b1b31;
+    --navy-800: #102a46;
+    --navy-700: #17395c;
+    --ink: #162033;
+    --muted: #64748b;
+    --line: #d8e2ef;
+    --paper: #ffffff;
+    --paper-soft: #f6f9fc;
+    --accent: #46b2ff;
+    --accent-soft: #dcefff;
+    --shadow: 0 18px 48px rgba(7, 17, 31, 0.12);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Yu Gothic", "Yu Gothic UI", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.75;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at top left, rgba(70, 178, 255, 0.16), transparent 34rem),
+        linear-gradient(180deg, #eef5fb 0%, #f8fafc 42%, #eef3f8 100%);
+}
+
+a {
+    color: inherit;
+}
+
 header {
-    background: linear-gradient(135deg, #00b4db, #0083b0); /* 水色のグラデーションで近代的に */
+    position: relative;
+    overflow: hidden;
     color: #fff;
-    padding: 30px 0 0 0; /* 上の余白を少し広く */
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 131, 176, 0.2); /* ヘッダー下部に柔らかい影 */
+    padding: 42px 24px 0;
+    background:
+        linear-gradient(135deg, rgba(7, 17, 31, 0.96), rgba(16, 42, 70, 0.96)),
+        linear-gradient(90deg, var(--navy-950), var(--navy-700));
+    box-shadow: 0 14px 36px rgba(7, 17, 31, 0.22);
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
 }
 
 header h1 {
+    position: relative;
+    z-index: 1;
     margin: 0;
-    font-size: 28px;
-    letter-spacing: 1px; /* 少し字間を広げて洗練された印象に */
+    font-size: clamp(1.7rem, 4vw, 2.7rem);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.05;
 }
 
-/* ナビゲーションメニュー全体 */
 nav {
-    background-color: rgba(255, 255, 255, 0.15); /* ヘッダー内で少し透けるデザイン */
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+    margin: 32px auto 0;
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Flexboxで綺麗に横並び */
+    width: min(920px, 100%);
+    margin: 0 auto;
+    padding: 0 18px;
+    list-style: none;
+    display: flex;
     justify-content: center;
-    gap: 30px; /* メニュー同士の隙間 */
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 nav li {
-    display: inline-block;
+    display: block;
 }
 
 nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.84);
     text-decoration: none;
+    font-size: 0.94rem;
+    font-weight: 700;
+    transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+nav a:hover,
+nav a.active {
     color: #fff;
-    font-weight: 500;
-    padding: 5px 10px;
-    position: relative; /* アニメーションの基準点 */
+    background: rgba(70, 178, 255, 0.22);
+    transform: translateY(-1px);
 }
 
-/* ナビゲーションのホバー時の下線アニメーション（近代的） */
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    transition: width 0.3s ease; /* 滑らかに線が伸びる */
-}
-
-nav a:hover::after,
-nav a.active::after {
-    width: 100%;
-}
-
-/* メインコンテンツ部分 */
 main {
-    width: 90%;
-    max-width: 800px;
-    margin: 40px auto; /* 上下に余裕を持たせる */
-    padding: 30px 40px; /* 内側の余白も広げてゆったりと */
-    background-color: #fff;
-    border-radius: 12px; /* 少し角丸を強く */
-    box-shadow: 0 10px 25px rgba(0, 131, 176, 0.08); /* 影にもほんのり水色を混ぜて透明感を出す */
+    width: min(920px, calc(100% - 32px));
+    margin: 42px auto;
+    padding: clamp(24px, 4vw, 44px);
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(216, 226, 239, 0.95);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
 }
 
 main h2 {
-    color: #0083b0; /* 見出しを落ち着いた水色に */
-    border-bottom: 3px solid #e1f5fe; /* 柔らかい太線のアンダーライン */
-    padding-bottom: 10px;
+    margin: 0 0 22px;
+    padding-bottom: 14px;
+    color: var(--navy-900);
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    line-height: 1.35;
+    border-bottom: 1px solid var(--line);
+}
+
+main h3 {
+    margin: 34px 0 14px;
+    color: var(--navy-800);
+    font-size: 1.12rem;
+    line-height: 1.45;
+}
+
+.page-description,
+.profile-content {
+    margin: 0 0 34px;
+    padding: 22px 24px;
+    background: var(--paper-soft);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+}
+
+.page-description h3 {
     margin-top: 0;
 }
 
-/* PDFリスト */
-/* -----------------------------------
-   PDFリストの各項目（アニメーション追加）
------------------------------------ */
-.pdf-list li {
-    background-color: #fff;
-    border: 1px solid #e1f5fe;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-    
-    /* 読み込み時のアニメーション設定 */
-    opacity: 0; /* 最初は透明にして見えなくする */
-    animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; /* ふわっと表示 */
-    
-    /* マウスホバー時の滑らかな動きの設定 */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.page-description p,
+.profile-content p {
+    margin: 0;
+    color: #334155;
 }
 
-/* ホバー時にカードが少し浮き上がる効果 */
-.pdf-list li:hover {
-    transform: translateY(-5px) !important; /* 読み込みアニメーションに打ち勝つため !important を付与 */
-    box-shadow: 0 8px 20px rgba(0, 131, 176, 0.15); /* 影を少し強調 */
+.profile-content p {
+    font-weight: 700;
 }
 
-/* -----------------------------------
-   項目ごとに表示タイミングをずらす（順番に表示）
------------------------------------ */
-.pdf-list li:nth-child(1) { animation-delay: 0.1s; }
-.pdf-list li:nth-child(2) { animation-delay: 0.2s; }
-.pdf-list li:nth-child(3) { animation-delay: 0.3s; }
-.pdf-list li:nth-child(4) { animation-delay: 0.4s; }
-.pdf-list li:nth-child(5) { animation-delay: 0.5s; }
-.pdf-list li:nth-child(6) { animation-delay: 0.6s; } /* 追加 */
-.pdf-list li:nth-child(7) { animation-delay: 0.7s; } /* 追加 */
-/* ※PDFの数が6個以上ある場合は、同様に :nth-child(6) { animation-delay: 0.6s; } のように追加してください */
-
-/* -----------------------------------
-   アニメーションの動きの定義
------------------------------------ */
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px); /* 最初は20px下に配置 */
-    }
-    100% {
-        opacity: 1; /* 完全に表示 */
-        transform: translateY(0); /* 元の位置に戻る */
-    }
-}
-
-/* PDFへのリンク */
-.pdf-list a {
-    display: flex; /* アイコンとテキストを並べる */
-    align-items: center;
-    padding: 18px 20px;
-    text-decoration: none;
-    color: #0277bd; /* 視認性の高い落ち着いた青水色 */
-    font-weight: bold;
-}
-/* -----------------------------------
-   イベントリスト（自己紹介ページ用）
------------------------------------ */
-.event-year {
-    color: #0083b0;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border-left: 4px solid #00b4db; /* 左側に水色の線を引いて見出しっぽく */
-    padding-left: 10px;
-    font-size: 1.1em;
-}
-
+.pdf-list,
 .event-list {
-    list-style-type: none;
+    margin: 0 0 34px;
     padding: 0;
-    margin-bottom: 20px;
+    list-style: none;
 }
 
+.pdf-list li,
 .event-list li {
-    background-color: #fff;
-    border: 1px solid #e1f5fe;
+    position: relative;
     margin-bottom: 12px;
+    overflow: hidden;
+    background: var(--paper);
+    border: 1px solid var(--line);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-    
-    /* PDFリストと同じ読み込み時のアニメーション */
-    opacity: 0; 
-    animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+    opacity: 0;
+    animation: fadeUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
-/* ホバー時の浮き上がり効果 */
+.pdf-list li::before,
+.event-list li::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: var(--navy-800);
+    opacity: 0.92;
+}
+
+.pdf-list li:hover,
 .event-list li:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 8px 20px rgba(0, 131, 176, 0.15);
+    transform: translateY(-3px);
+    border-color: #b8cbe0;
+    box-shadow: 0 16px 34px rgba(7, 17, 31, 0.12);
 }
 
-/* リンクをブロック状にして、枠内のどこをクリックしても飛べるようにする */
+.pdf-list a,
 .event-list a {
     display: block;
-    padding: 15px 20px;
+    padding: 18px 22px 12px 26px;
+    color: var(--navy-800);
     text-decoration: none;
-    color: #0277bd;
-    font-weight: bold;
-    position: relative;
+    font-weight: 800;
+    line-height: 1.55;
 }
 
-/* リンクの右端に「>」のような矢印アイコンをCSSで追加（リンクだと分かりやすくするため） */
-.event-list a::after {
-    content: '〉';
-    position: absolute;
-    right: 20px;
-    color: #b3e5fc;
-    font-size: 0.9em;
-}
-
-/* アニメーションの順番ずらし */
-.event-list li:nth-child(1) { animation-delay: 0.1s; }
-.event-list li:nth-child(2) { animation-delay: 0.2s; }
-.event-list li:nth-child(3) { animation-delay: 0.3s; }
-.event-list li:nth-child(4) { animation-delay: 0.4s; }
-
-/* リンクの頭にアイコン代わりの絵文字を付ける（不要なら削除可） */
 .pdf-list a::before {
-    content: '📄'; 
-    margin-right: 12px;
-    font-size: 1.2em;
+    content: "PDF";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 22px;
+    margin-right: 10px;
+    padding: 0 7px;
+    border-radius: 4px;
+    color: #fff;
+    background: var(--navy-900);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    vertical-align: 0.08em;
 }
 
-/* フッター（ページ下部） */
+.pdf-description {
+    margin: 0;
+    padding: 0 22px 18px 26px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.72;
+}
+
+.event-year {
+    margin-top: 32px;
+    margin-bottom: 12px;
+    padding-left: 12px;
+    color: var(--navy-900);
+    border-left: 4px solid var(--accent);
+    font-size: 1.05rem;
+}
+
+.event-list a {
+    padding: 16px 46px 16px 26px;
+}
+
+.event-list a::after {
+    content: ">";
+    position: absolute;
+    right: 22px;
+    color: var(--accent);
+    font-weight: 800;
+}
+
+.pdf-list li:nth-child(1),
+.event-list li:nth-child(1) { animation-delay: 0.05s; }
+.pdf-list li:nth-child(2),
+.event-list li:nth-child(2) { animation-delay: 0.1s; }
+.pdf-list li:nth-child(3),
+.event-list li:nth-child(3) { animation-delay: 0.15s; }
+.pdf-list li:nth-child(4),
+.event-list li:nth-child(4) { animation-delay: 0.2s; }
+.pdf-list li:nth-child(5),
+.event-list li:nth-child(5) { animation-delay: 0.25s; }
+.pdf-list li:nth-child(6),
+.event-list li:nth-child(6) { animation-delay: 0.3s; }
+.pdf-list li:nth-child(7),
+.event-list li:nth-child(7) { animation-delay: 0.35s; }
+.pdf-list li:nth-child(8),
+.event-list li:nth-child(8) { animation-delay: 0.4s; }
+.pdf-list li:nth-child(9),
+.event-list li:nth-child(9) { animation-delay: 0.45s; }
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 footer {
+    width: min(920px, calc(100% - 32px));
+    margin: 0 auto 32px;
+    padding: 18px 0 0;
+    color: var(--muted);
     text-align: center;
-    margin-top: 50px;
-    padding-bottom: 30px;
-    color: #777;
-    font-size: 0.9em;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+    header {
+        padding-top: 34px;
+    }
+
+    nav {
+        margin-top: 24px;
+    }
+
+    nav ul {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 2px;
+    }
+
+    nav a {
+        white-space: nowrap;
+    }
+
+    main {
+        width: min(100% - 20px, 920px);
+        margin: 24px auto;
+        padding: 22px 16px;
+    }
+
+    .page-description,
+    .profile-content {
+        padding: 18px;
+    }
+
+    .pdf-list a,
+    .event-list a {
+        padding-left: 20px;
+        padding-right: 18px;
+    }
+
+    .pdf-description {
+        padding-left: 20px;
+        padding-right: 18px;
+    }
 }
