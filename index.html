@@ -1,217 +1,193 @@
 <!DOCTYPE html>
-
 <html lang="ja">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>grad</title>
-
+    <title>grad | 資料一覧</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
-
-
-
-    <header>
-
-        <h1>grad</h1>
-
-        <nav>
-
-            <ul>
-
-                <li><a href="index.html" class="active">資料一覧</a></li>
-
-                <li><a href="profile.html">自己紹介</a></li>
-
-                <li><a href="books.html">本の紹介</a></li>
-
-            </ul>
-
+    <header class="site-header">
+        <nav class="topbar" aria-label="メインナビゲーション">
+            <a class="brand" href="index.html">grad</a>
+            <div class="nav-links">
+                <a class="active" href="index.html">資料一覧</a>
+                <a href="profile.html">自己紹介</a>
+            </div>
         </nav>
 
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">physics / mathematics notes</p>
+                <h1>作成した資料一覧</h1>
+                <p class="lead">
+                    作成した資料とその説明です。注意：すべての内容の正確性は保証できません。絵の展示会だと思ってください。
+                </p>
+                <div class="hero-meta">
+                    <span>更新日: 2026/05/02</span>
+                    <span>物理 11件</span>
+                    <span>数学 5件</span>
+                </div>
+            </div>
+        </section>
     </header>
 
-<main>
-        <h2>作成した資料一覧</h2>
-        <div class="page-description">
-            <h3>このページについて</h3>
-            <p>
-                作成した資料とその説明です。<br>
-                注意：すべての内容の正確性は保証できません。絵の展示会だと思ってください。(更新日:2026/05/02)
-            </p>
-        </div>
+    <main>
+        <section class="section-intro">
+            <p class="section-kicker">archive</p>
+            <h2>ノートとスライド</h2>
+            <p>場の理論、ゲージ理論、幾何学、トポロジーなどに関する資料をまとめています。</p>
+        </section>
 
-        <!-- 物理セクション -->
-        <h3>物理</h3>
-        <ul class="pdf-list">
-            <li>
-                <a href="pdffile/Peskin20memo.pdf" target="_blank">
-                    物理18：ゲージ理論と自発的対称性の破れ
-                </a>
-                <p class="pdf-description">
-                    Peskin 20章のメモです. 可換/非可換ゲージ群のHiggs機構やその演習問題に加えて, Glashow-Weinberg-Salam Theory や Anomaly cancellation についても書かれています. <br>
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/Peskin18memo.pdf" target="_blank">
-                    物理17：Operator products and Effective vertices
-                </a>
-                <p class="pdf-description">
-                    Peskin 18章のメモ. (まだ途中までしか書いていないです)<br>
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/peskin165memo.pdf" target="_blank">
-                    物理16：one-loop divergences of non-abelian gauge theories
-                </a>
-                <p class="pdf-description">
-                    Peskin 16.5章のメモ. 1ループのダイアグラムを7個計算して非可換ゲージ理論が漸近的自由であることを示す.<br>
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/peskin15memo.pdf" target="_blank">
-                    物理15：Wilson loop と ホロノミー準同型
-                </a>
-                <p class="pdf-description">
-                    Wilson loopとホロノミーを説明して,~その関係についてゲージ場と重力場を例に説明した自分用のメモ.<br>
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/FetterWalecka_memo.pdf" target="_blank">
-                    物理14：Fetter-Walecka  Quantum theory of many-particle systems のメモ
-                </a>
-                <p class="pdf-description">
-                    Fetter-Walecka  Quantum theory of many-particle systems 10章 の内容をまとめたメモです。<br>
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/witten1989Jonespolmemo.pdf" target="_blank">
-                    物理13：E.Witten Quantum Field Theory and Jones Polynomial のメモ
-                </a>
-                <p class="pdf-description">
-                    E.Witten Quantum Field Theory and Jones Polynomial の内容をまとめたメモです。<br>
-                    りゼミ5th TQFT班のRS中の内容をもとに、3次元Chern-Simons理論から得られる位相不変量についてまとめました。
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/Witten1982SU2anomaly.pdf" target="_blank">
-                    物理13：E.Witten An SU(2) Anomaly (1982) のメモ
-                </a>
-                <p class="pdf-description">
-                    E.Witten An SU(2) Anomaly (1982) の内容をまとめたメモです。<br>
-                    Atiyah-Patodi-Singerの指数定理と数学的なspectral flowのアイデアと計算結果に基づき、5次元Dirac作用素のゼロモードの個数の偶奇と、spectral flowの数の偶奇がmod 2で完全に一致することを断熱近似を用いた物理的解析によって示しています。
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/nona.pdf" target="_blank">
-                    物理12：非可換ゲージ理論の物理と数学の交差点について
-                </a>
-                <p class="pdf-description">
-                    coming soon...<br>
-                    数学のゲージ理論と物理の非可換ゲージ理論についてまとめ、両者の結果を融合させて何が得られるか考えます。
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/2025初期宇宙の熱的性質.pdf" target="_blank">
-                    物理11：初期宇宙の熱的性質
-                </a>
-                <p class="pdf-description">
-                    国立天文台サマースチューデントプログラムの成果発表で用いたスライドです。<br>
-                    ありがたいことに見せてほしいという声を多くいただいたのでここに載せときます。<br>
-                    もともとやる予定だった元素合成に飽きて途中から宇宙論の勉強を始めてしまい担当教員に多くの迷惑をかけてしまいましたが、
-                    たくさんの人と出会い色々なことを学べた楽しい1か月の天文台生活でした。
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/場の理論と多様体論.pdf" target="_blank">
-                    物理10：場の理論と多様体論1
-                </a>
-                <p class="pdf-description">
-                    解析力学で系の時間発展と対称性を記述する運動方程式とPoisson括弧が多様体の言葉を用いてどのように表せるかまとめました。
-                    symplectic多様体(M,ω)やHamiltonベクトル場など、この資料の議論に必ずしも必要ではない厳密な定義は省略してなるべく物理系の人にも読みやすいものにしたつもりです。<br>
-                    この資料はあくまで紹介に過ぎないので、本格的に学びたい人は以下の本を参考にするといいと思います。<br><br>
-                    ・中原 幹夫  "理論物理学のための幾何学とトポロジー1"<br>
-                    ・谷川 省吾  "SGCライブラリ68 "幾何学から物理学へ"
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/ランダウリフシッツ18.7解説.pdf" target="_blank">
-                    物理2：ランダウリフシッツ18.7解説
-                </a>
-                <p class="pdf-description">
-                    中心力ポテンシャル中の粒子の逆散乱問題です。LaTeXで初めて資料を作りました。<br>
-                    当時高校2年生(!?)だった2人と『ランダウ=リフシッツ 力学』の自主ゼミをした際、何日もかけて考えた思い出深い問題です。
-                </p>
-            </li>
-        </ul>
+        <section class="resource-section" aria-labelledby="physics-heading">
+            <div class="section-heading">
+                <p class="section-kicker">physics</p>
+                <h2 id="physics-heading">物理</h2>
+            </div>
 
-        <!-- 数学セクション -->
-        <h3>数学</h3>
-        <ul class="pdf-list">
-            <li>
-                <a href="pdffile/spm30alg-topo.pdf" target="_blank">
-                    数学11：基本群と被覆空間のノート
-                </a>
-                <p class="pdf-description">
-                    ～～更新中～～<br>
-                    教科書: 佐藤 隆夫 \textit{基本群と被覆空間}, 裳華房, 2023.<br>
-                    spm30th 代数トポロジー班
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/Hump.pdf" target="_blank">
-                    数学10：Lie代数と表現論
-                </a>
-                <p class="pdf-description">
-                    ～～更新中～～<br>
-                    教科書: J.E. Humphreys Introduction to Lie Algebras and Representation Theory"<br>
-                    Humphreysを参考にしながら行間埋めと補足をしてます。例として物理や多様体も入れました。
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/Instantons_and_Four_Manifolds (1).pdf" target="_blank">
-                    数学9：Instantons and Four Manifoldsの自主ゼミノート
-                </a>
-                <p class="pdf-description">
-                    ～～更新中～～<br>
-                    教科書: Freed Uhlenbeck "Instantons and Four Manifolds"<br>
-                    知り合いを集めて開催した4次元多様体の自主ゼミノートです。
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/圏論自主ゼミ.pdf" target="_blank">
-                    数学8：ベーシック圏論の自主ゼミノート
-                </a>
-                <p class="pdf-description">
-                    coming soon...
-                </p>
-            </li>
-            <li>
-                <a href="pdffile/bibunnkikaphys.pdf" target="_blank">
-                    数学7：理論物理学のための微分幾何学とゲージ理論
-                </a>
-                <p class="pdf-description">
-                    ～～更新中～～<br>
-                    証明は森田微分幾何や小林微分幾何にまかせてる部分が多いです。あくまで微分幾何の概要を知るためのものだと思って下さい。
-                </p>
-            </li>
-        </ul>
+            <div class="resource-grid">
+                <article class="resource-card featured">
+                    <a href="../pdffile/Peskin20memo.pdf" target="_blank">
+                        <span class="tag">物理18</span>
+                        <h3>ゲージ理論と自発的対称性の破れ</h3>
+                        <p>Peskin 20章のメモです. 可換/非可換ゲージ群のHiggs機構やその演習問題に加えて, Glashow-Weinberg-Salam Theory や Anomaly cancellation についても書かれています.</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/Peskin18memo.pdf" target="_blank">
+                        <span class="tag">物理17</span>
+                        <h3>Operator products and Effective vertices</h3>
+                        <p>Peskin 18章のメモ. (まだ途中までしか書いていないです)</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/peskin165memo.pdf" target="_blank">
+                        <span class="tag">物理16</span>
+                        <h3>one-loop divergences of non-abelian gauge theories</h3>
+                        <p>Peskin 16.5章のメモ. 1ループのダイアグラムを7個計算して非可換ゲージ理論が漸近的自由であることを示す.</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/peskin15memo.pdf" target="_blank">
+                        <span class="tag">物理15</span>
+                        <h3>Wilson loop と ホロノミー準同型</h3>
+                        <p>Wilson loopとホロノミーを説明して,~その関係についてゲージ場と重力場を例に説明した自分用のメモ.</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/FetterWalecka_memo.pdf" target="_blank">
+                        <span class="tag">物理14</span>
+                        <h3>Fetter-Walecka Quantum theory of many-particle systems のメモ</h3>
+                        <p>Fetter-Walecka Quantum theory of many-particle systems 10章 の内容をまとめたメモです。</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/witten1989Jonespolmemo.pdf" target="_blank">
+                        <span class="tag">物理13</span>
+                        <h3>E.Witten Quantum Field Theory and Jones Polynomial のメモ</h3>
+                        <p>E.Witten Quantum Field Theory and Jones Polynomial の内容をまとめたメモです。りゼミ5th TQFT班のRS中の内容をもとに、3次元Chern-Simons理論から得られる位相不変量についてまとめました。</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/Witten1982SU2anomaly.pdf" target="_blank">
+                        <span class="tag">物理13</span>
+                        <h3>E.Witten An SU(2) Anomaly (1982) のメモ</h3>
+                        <p>Atiyah-Patodi-Singerの指数定理と数学的なspectral flowのアイデアと計算結果に基づき、断熱近似を用いた物理的解析によって示しています。</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/nona.pdf" target="_blank">
+                        <span class="tag">物理12</span>
+                        <h3>非可換ゲージ理論の物理と数学の交差点について</h3>
+                        <p>coming soon... 数学のゲージ理論と物理の非可換ゲージ理論についてまとめ、両者の結果を融合させて何が得られるか考えます。</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/2025初期宇宙の熱的性質.pdf" target="_blank">
+                        <span class="tag">物理11</span>
+                        <h3>初期宇宙の熱的性質</h3>
+                        <p>国立天文台サマースチューデントプログラムの成果発表で用いたスライドです。元素合成と初期宇宙論についての内容です。</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/場の理論と多様体論.pdf" target="_blank">
+                        <span class="tag">物理10</span>
+                        <h3>場の理論と多様体論1</h3>
+                        <p>解析力学で系の時間発展と対称性を記述する運動方程式とPoisson括弧が多様体の言葉を用いてどのように表せるかまとめました。</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/ランダウリフシッツ18.7解説.pdf" target="_blank">
+                        <span class="tag">物理2</span>
+                        <h3>ランダウリフシッツ18.7解説</h3>
+                        <p>中心力ポテンシャル中の粒子の逆散乱問題です。LaTeXで初めて資料を作りました。</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section class="resource-section" aria-labelledby="math-heading">
+            <div class="section-heading">
+                <p class="section-kicker">mathematics</p>
+                <h2 id="math-heading">数学</h2>
+            </div>
+
+            <div class="resource-grid">
+                <article class="resource-card featured">
+                    <a href="../pdffile/spm30alg-topo.pdf" target="_blank">
+                        <span class="tag">数学11</span>
+                        <h3>基本群と被覆空間のノート</h3>
+                        <p>～～更新中～～ 教科書: 佐藤 隆夫 \textit{基本群と被覆空間}, 裳華房, 2023. spm30th 代数トポロジー班</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/Hump.pdf" target="_blank">
+                        <span class="tag">数学10</span>
+                        <h3>Lie代数と表現論</h3>
+                        <p>～～更新中～～ Humphreysを参考にしながら行間埋めと補足をしてます。例として物理や多様体も入れました。</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/Instantons_and_Four_Manifolds (1).pdf" target="_blank">
+                        <span class="tag">数学9</span>
+                        <h3>Instantons and Four Manifoldsの自主ゼミノート</h3>
+                        <p>～～更新中～～ 教科書: Freed Uhlenbeck "Instantons and Four Manifolds" 知り合いを集めて開催した4次元多様体の自主ゼミノートです。</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/圏論自主ゼミ.pdf" target="_blank">
+                        <span class="tag">数学8</span>
+                        <h3>ベーシック圏論の自主ゼミノート</h3>
+                        <p>coming soon...</p>
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <a href="../pdffile/bibunnkikaphys.pdf" target="_blank">
+                        <span class="tag">数学7</span>
+                        <h3>理論物理学のための微分幾何学とゲージ理論</h3>
+                        <p>～～更新中～～ 証明は森田微分幾何や小林微分幾何にまかせてる部分が多いです。微分幾何の概要を知るための資料です。</p>
+                    </a>
+                </article>
+            </div>
+        </section>
     </main>
-    <footer>
 
+    <footer class="site-footer">
         <p>&copy; 2025 @grad31415</p>
-
     </footer>
-
-
-
 </body>
-
 </html>
